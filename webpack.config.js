@@ -5,7 +5,7 @@ const PATHS = {
     build: path.join(__dirname, 'build'),
     app: path.join(__dirname, 'app')
 }
-module.exports = {
+const config = {
     entry: {
         app: PATHS.app
     },
@@ -18,9 +18,10 @@ module.exports = {
             title: 'Webpack Demo'
         })
     ]
-//    module: {
-//        loaders: [
-//            { test: /\.css$/, loader: "style!css" }
-//        ]
-//    }
+
+}
+
+module.exports = function (env) {
+    console.log (`env: ${env}`)
+    return config
 }
